@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<div id="chart"></div>
+<div id="fat-chart"></div>
 </body>
 <script type="text/javascript">
 
@@ -28,7 +28,7 @@ var chart = c3.generate({
             xFormat: '%Y%m%d',
             url: 'timefat.csv',
             types:{
-                    Events:'area-step',
+                    Events:'line',
                   },
             colors: {
                       Events: '#E77FA5',
@@ -73,7 +73,9 @@ var chart = c3.generate({
 
 });
 
+chart.load({
 
+});
 
 </script>
 </html>
