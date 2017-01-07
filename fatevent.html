@@ -32,7 +32,7 @@
 var time = 'year';
 var fatal = "fat-"+time+".csv";
 
-Plot = function(){    
+Plot = function(time){    
         var chart = c3.generate({
             bindto: '#chart',
             data: {
@@ -90,13 +90,13 @@ Plot = function(){
         });
 };
 
-Plot();
+Plot(time);
 $(document).ready(function () {
     $("#range").change(function () {
         time = $("#range").find('option:selected').val();
         fatal = "fat-"+time+".csv";
         
-        Plot();
+        Plot(time);
     });
 });
 
