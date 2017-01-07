@@ -25,7 +25,7 @@ var chart = c3.generate({
              },
     data: {
             x: 'Date',
-            xFormat: '%Y-%m-%d',
+            xFormat: '%Y%m%d',
             url: 'timefat.csv',
             types:{
                     Events:'area-step',
@@ -48,11 +48,11 @@ var chart = c3.generate({
                  
                  tick: {
                          format: '%Y-%m-%d',
-                         // count : 110,
+                         count : 5100,
                          // culling : {
                          //             max: 110
                          //           },
-                         rotate: 75,
+                         rotate: 80,
                         
                         
                        }
