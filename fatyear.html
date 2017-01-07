@@ -12,11 +12,11 @@
 </head>
 
 <body>
-<div id="chart"></div>
+<div id="fatality"></div>
 </body>
 <script type="text/javascript">
 
-var chart = c3.generate({
+var fatality = c3.generate({
     padding: {
                top: 40,
                right: 100,
@@ -28,10 +28,10 @@ var chart = c3.generate({
             xFormat: '%Y',
             url: 'fat-year.csv',
             types:{
-                    Events:'bar',
+                    fatility:'area-step',
                   },
             colors: {
-                      Events: '#F37C78',
+                      fatility: '#E77FA5',
           
                     },
           },
