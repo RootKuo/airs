@@ -20,18 +20,15 @@ var chart = c3.generate({
     padding: {
                top: 40,
                right: 100,
-               bottom: 0,
+               bottom: 1,
                left: 100,
              },
     data: {
             x: 'YMD',
             xFormat: '%Y',
             url: 'fat-year.csv',
-            types:{
-                    fatality:'area-step',
-                  },
-            colors: {
-                      fatality: '#E77FA5',
+            type:'area-step',
+            colors: '#E77FA5',
           
                     },
           },
