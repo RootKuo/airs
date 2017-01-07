@@ -27,8 +27,12 @@ var chart = c3.generate({
             x: 'YMD',
             xFormat: '%Y',
             url: 'fat-year.csv',
-            type:'area-step',
-            colors: '#E77FA5',
+            types:{
+              fatality :'area-step',
+            },
+
+            colors: {'#E77FA5',
+          },
           
                     },
           
