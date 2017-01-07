@@ -31,7 +31,6 @@
 <script type="text/javascript">
 var time = 'year';
 var fatal = "fat-"+time+".csv";
-var event = "events-"+time+".csv";
 
 Plot = function(){    
         var chart = c3.generate({
@@ -59,10 +58,10 @@ Plot = function(){
                     type: 'timeseries',
                     tick: {
                          format: '%Y-%m-%d',
-                         // count : 110,
-                         // culling : {
-                         //             max: 110
-                         //           },
+                         count : 110,
+                         culling : {
+                                     max: 110
+                                   },
                          rotate: 75,
                         
                         
@@ -85,7 +84,7 @@ Plot = function(){
            
             color:{
               pattern:[
-              '#E77FA5','#32B0C4'
+              '#BE91C8'
               ]
             },
         });
@@ -96,7 +95,7 @@ $(document).ready(function () {
     $("#range").change(function () {
         time = $("#range").find('option:selected').val();
         fatal = "fat-"+time+".csv";
-        // event = "events-"+time+".csv";
+        
         Plot();
     });
 });
