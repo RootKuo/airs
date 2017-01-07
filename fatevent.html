@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Load c3.times -->
+  <!-- Load c3.css -->
   <link href="c3.css" rel="stylesheet" type="text/css">
   <!-- Load d3.js and c3.js -->
   <script src="https://d3js.org/d3.v3.js"></script>
@@ -33,12 +33,12 @@ var time = 'year';
 var fatal = "fat-"+time+".csv";
 var event = "events-"+time+".csv";
 
-Plot = function(time){    
+Plot = function(){    
         var chart = c3.generate({
             bindto: '#chart',
             data: {
-                url: fatal,
-                url: event,
+                url: {fatal, event},
+                
                 type: 'area-step',
                 x: 'YMD',
             },
@@ -91,13 +91,13 @@ Plot = function(time){
         });
 };
 
-Plot(time);
+Plot();
 $(document).ready(function () {
     $("#range").change(function () {
         time = $("#range").find('option:selected').val();
         fatal = "fat-"+time+".csv";
         event = "events-"+time+".csv";
-        Plot(time);
+        Plot();
     });
 });
 
