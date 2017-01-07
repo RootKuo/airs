@@ -37,7 +37,7 @@ Plot = function(){
         var chart = c3.generate({
             bindto: '#chart',
             data: {
-                url: {fatal, event},
+                url: fatal,
                 
                 type: 'area-step',
                 x: 'YMD',
@@ -96,7 +96,7 @@ $(document).ready(function () {
     $("#range").change(function () {
         time = $("#range").find('option:selected').val();
         fatal = "fat-"+time+".csv";
-        event = "events-"+time+".csv";
+        // event = "events-"+time+".csv";
         Plot();
     });
 });
