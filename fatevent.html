@@ -31,7 +31,7 @@
 <script type="text/javascript">
 var time = '%Y';
 var data = '%25Y';
-var fatal = "fat-"+data+".csv";
+var fatal = "Data/fat-"+data+".csv";
 Plot = function(fatal,time){    
         var chart = c3.generate({
             bindto: '#chart',
@@ -101,7 +101,7 @@ $(document).ready(function () {
       }else{
          data = '%25Y'
       };
-      fatal = "fat-"+data+".csv";
+      fatal = "Data/fat-"+data+".csv";
         
         Plot(fatal,time);
     });
