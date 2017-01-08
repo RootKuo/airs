@@ -17,9 +17,9 @@
 <br/>
 
 <select id="range">
-    <option value='year'>YEAR</option>
-    <option value='month'>MONTH</option>
-    <option value='day'>DATE</option>
+    <option> year </option>
+    <option> month </option>
+    <option> day </option>
 </select>
 
 <br />
@@ -40,7 +40,7 @@ Plot = function(fatal){
                 
                 type: 'area-step',
                 x: 'YMD',
-                xFormat:'%Y',
+                xFormat:'%Y%m%d',
             },
             // pie: {
             //     label: {
@@ -58,7 +58,7 @@ Plot = function(fatal){
                 x: {
                     type: 'timeseries',
                     tick: {
-                         format: '%Y',
+                         format: '%Y-%m-%d',
                          count : 110,
                          culling : {
                                      max: 110
