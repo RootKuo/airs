@@ -43,7 +43,7 @@ Plot = function(fatal,time){
                 
                 type: 'area-step',
                 x: 'YMD',
-                xFormat: "time"+f,
+                xFormat: time+"f",
             },
             // pie: {
             //     label: {
@@ -61,7 +61,7 @@ Plot = function(fatal,time){
                 x: {
                     type: 'timeseries',
                     tick: {
-                         format: "time"+f,
+                         format: time+"f",
                          count : 110,
                          culling : {
                                      max: 110
