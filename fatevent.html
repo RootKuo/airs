@@ -17,9 +17,9 @@
 <br/>
 
 <select id="range">
-    <option> year </option>
-    <option> month </option>
-    <option> day </option>
+    <option value='%Y'>By Year</option>
+    <option value='%Y%m'>By Month</option>
+    <option value='%Y%m%d'>By day</option>
 </select>
 
 <br />
@@ -29,10 +29,10 @@
 </body>
 
 <script type="text/javascript">
-var time = 'year';
+var time = '%Y';
 var fatal = "fat-"+time+".csv";
 
-Plot = function(fatal){    
+Plot = function(fatal,time){    
         var chart = c3.generate({
             bindto: '#chart',
             data: {
@@ -40,7 +40,7 @@ Plot = function(fatal){
                 
                 type: 'area-step',
                 x: 'YMD',
-                
+                xFormat: time,
             },
             // pie: {
             //     label: {
@@ -58,7 +58,7 @@ Plot = function(fatal){
                 x: {
                     type: 'timeseries',
                     tick: {
-                         
+                         format: '%Y'
                          count : 110,
                          culling : {
                                      max: 110
@@ -91,13 +91,13 @@ Plot = function(fatal){
         });
 };
 
-Plot(fatal);
+Plot(fatal,time);
 $(document).ready(function () {
     $("#range").change(function () {
         time = $("#range").find('option:selected').val();
         fatal = "fat-"+time+".csv";
         
-        Plot(fatal);
+        Plot(fatal,time);
     });
 });
 
