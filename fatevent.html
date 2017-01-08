@@ -30,8 +30,15 @@
 
 <script type="text/javascript">
 var time = '%Y';
-var fatal = "fat-"+time+".csv";
-
+var data = '%25Y';
+if(time=='%Y%m%d')
+  data = '%25Y%25m%25d'
+else if(time=='%Y%m')
+  data = '%25Y%25m'
+else
+  data = '%25Y';
+var fatal = "fat-"+data+".csv";
+         
 Plot = function(fatal,time){    
         var chart = c3.generate({
             bindto: '#chart',
