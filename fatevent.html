@@ -92,7 +92,7 @@ Plot = function(fatal,time,ctype){
         });
 };
 
-Plot(fatal,time);
+Plot(fatal,time,ctype);
 $(document).ready(function () {
     $("#range").change(function () {
       time = $("#range").find('option:selected').val();
@@ -108,7 +108,7 @@ $(document).ready(function () {
       };
       fatal = "fat-"+data+".csv";
         
-        Plot(fatal,time);
+        Plot(fatal,time,ctype);
     });
 });
 
