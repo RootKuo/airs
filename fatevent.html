@@ -32,14 +32,12 @@
 var time = '%Y';
 var data = '%25Y';
 var fatal = "fat-"+data+".csv";
-var ctype = 'area-step';
-Plot = function(fatal,time,ctype){    
+Plot = function(fatal,time){    
         var chart = c3.generate({
             bindto: '#chart',
             data: {
                 url: fatal,
-                
-                type: ctype,
+                type: 'area-step',
                 x: 'YMD',
                 xFormat: time,
             },
@@ -92,23 +90,20 @@ Plot = function(fatal,time,ctype){
         });
 };
 
-Plot(fatal,time,ctype);
+Plot(fatal,time);
 $(document).ready(function () {
     $("#range").change(function () {
       time = $("#range").find('option:selected').val();
       if(time=='%Y%m%d'){
-         data = '%25Y%25m%25d';
-         ctype = 'area'
+         data = '%25Y%25m%25d'
       }else if(time=='%Y%m'){
-         data = '%25Y%25m';
-         ctype = 'area-step'
+         data = '%25Y%25m'
       }else{
-         data = '%25Y';
-         ctype = 'area-step'
+         data = '%25Y'
       };
       fatal = "fat-"+data+".csv";
         
-        Plot(fatal,time,ctype);
+        Plot(fatal,time);
     });
 });
 
